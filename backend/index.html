@@ -207,8 +207,8 @@
         var dynamoMarkers = [];
         var hourAgo = (new Date).getTime() - 3600000;
         var params = {
-          TableName : 'parkaboo',
-          FilterExpression : 'ID > :hourAgo',
+          TableName : 'parkaboo-public',
+          FilterExpression : 'Time > :hourAgo',
           ExpressionAttributeValues : {':hourAgo' : hourAgo}
         };
 
@@ -306,6 +306,7 @@
         var range = escape(document.getElementById('range').value);
         var type = document.getElementById('type').value;
         var time = (new Date).getTime();
+        time = time.toString();
         var lat = marker.getPosition().lat();
         var long = marker.getPosition().lng();
         var index = markers.indexOf(marker);

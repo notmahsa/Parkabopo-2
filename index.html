@@ -66,8 +66,8 @@
 			var dynamodb = new AWS.DynamoDB.DocumentClient();
 			var hourAgo = (new Date).getTime() - 3600000;
 			var params = {
-				TableName : 'parkaboo',
-				FilterExpression : 'ID > :hourAgo',
+				TableName : 'parkaboo-public',
+				FilterExpression : 'Time > :hourAgo',
 				ExpressionAttributeValues : {':hourAgo' : hourAgo}
 			};
 
